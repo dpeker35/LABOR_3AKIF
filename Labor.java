@@ -82,7 +82,15 @@ public class Labor
     
      public void setStock(int stock)
     {
-        this.stock = stock;
+        if((stock >=0) && (stock <=20))
+        {
+            this.stock = stock;
+        }
+        else
+        {
+            System.out.println("Error: Der Wert muss zwischen 0 und 20 liegen");
+            this.stock = 5;
+        }
     }
     
      public void setBeamer(boolean beamer)
