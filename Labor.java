@@ -122,34 +122,32 @@ public class Labor
     }
     
     
-    public String getZimmernummer()
+   public String getZimmernummer()
     {
-        int pos1;
-      
-    
         String zimmernummer;
-        
-        pos1 = raum.indexOf("2");
-        zimmernummer = raum.substring(pos1,8);
-       
-        
-        
+        int pos;
+
+        pos = raum.lastIndexOf(".") + 1;
+        zimmernummer = raum.substring(pos);
+
         return zimmernummer;
+
     }
-    
-    
-    public String getstocklabor()
+
+    public String getLaborstock()
     {
-       int pos;
-       String stocklabor;
-       
-       pos = raum.indexOf(".")+1;
-       stocklabor = raum.substring(pos,4);
-       
-        
-        
-        return stocklabor;
+    String stock;
+    int pos1;
+    int pos2;
+
+    pos1 = raum.indexOf(".")+1;
+    pos2 = raum.indexOf(".",pos1);
+    stock = raum.substring(pos1,pos2);
+
+    return stock;
+    
     }
+
     
     public void printLabor()
     {
